@@ -1,0 +1,33 @@
+<div class="d-flex" id="wrapper">
+    
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">User Setting </div>
+      <div class="list-group list-group-flush">
+        
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+          <!-- This is the tree node template for leaf nodes -->
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+            <!-- use a disabled button to provide padding for tree leaf -->
+            <a href="#" class="list-group-item list-group-item-action bg-light">
+              <i class="fas fa-angle-right">&nbsp;&nbsp;{{node.name}}</i></a>
+            
+          </mat-tree-node>
+          <!-- This is the tree node template for expandable nodes -->
+          <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+            <a href="#" class="list-group-item list-group-item-action bg-light" matTreeNodeToggle
+            [attr.aria-label]="'Toggle ' + node.name"  >
+                    <i class="fas fa-chevron-circle-right">&nbsp;&nbsp;
+                {{treeControl.isExpanded(node) ? '' : ''}}
+              </i><b>
+              {{node.name}}</b>
+            </a>
+            
+          </mat-tree-node>
+        </mat-tree>
+      </div>
+    
+
+    </div>
+
+
+</div>

@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.css';
+
+/* 
+// CSS3 Flexbox Holy Grail Layout
+// Made with ❤ by @ImDigamberSingh
+// https://www.positronx.io
+*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+  }
+  
+  .container {
+    display:flex;
+    flex-flow:row wrap;
+  }
+   
+  app-home {
+    order:1;
+    height:100px;
+    flex:0 1 100%;
+    background: white;
+  }
+  
+  app-nav {
+    order:2;
+    flex: 0 1 200px;
+    background: rgb(176, 165, 199);
+  }
+  
+  app-workspace,
+  app-privacy-policy {
+    order:3;
+    flex: 1;
+    min-height:500px;
+    background: white;
+  }
+  
+  app-user-setting {
+    order:4;
+    flex:0 1 200px;
+    background: white;
+  }
+  app-footer {
+    order:5;
+    height:100px;
+    flex:0 1 100%;
+    background: rgb(119, 120, 121);
+  }
